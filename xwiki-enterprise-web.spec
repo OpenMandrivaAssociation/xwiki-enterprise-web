@@ -67,6 +67,7 @@ done
 touch %{buildroot}%{appdir}/WEB-INF/xwiki.log
 
 install -m644 xwiki.conf -D %{buildroot}%{_webappconfdir}/xwiki.conf
+install -m755 %{SOURCE1} -D %{buildroot}%{_bindir}/xwiki-pgsql-install
 
 %posttrans
 function randkey () {
@@ -90,6 +91,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,tomcat,tomcat)
+%{_bindir}/xwiki-pgsql-install
 %config(noreplace) %{_webappconfdir}/xwiki.conf
 %dir %{appdir}
 
