@@ -69,14 +69,14 @@ touch %{buildroot}%{appdir}/WEB-INF/xwiki.log
 install -m644 xwiki.conf -D %{buildroot}%{_webappconfdir}/xwiki.conf
 
 %posttrans
-if [ "$1" = "1" ]; then
-	function randkey () {
-		head /dev/urandom|md5sum|cut -d\  -f1
-	}
-	VALIDATIONKEY=$(randkey)
-	ENCRYPTIONKEY=$(randkey)
-	sed -e "s#\(xwiki.authentication.validationKey\)=.*#\1=${VALIDATIONKEY}#g" -e "s#\(xwiki.authentication.encryptionKey\)=.*#\1=${ENCRYPTIONKEY}#g" -i %{appdir}/WEB-INF/xwiki.cfg
-fi
+function randkey () {
+	head /dev/urandom|md5sum|cut -d\  -f1
+}
+VALIDATIONKEY=$(randkey)
+ENCRYPTIONKEY=$(randkey)
+sed	-e "s#\(xwiki.authentication.validationKey\)=totototototototototototototototo#\1=${VALIDATIONKEY}#g" \
+	-e "s#\(xwiki.authentication.encryptionKey\)=titititititititititititititititi#\1=${ENCRYPTIONKEY}#g" \
+	-i %{appdir}/WEB-INF/xwiki.cfg
 
 service tomcat5 condrestart
 %_post_webapp
