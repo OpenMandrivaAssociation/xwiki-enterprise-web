@@ -1,0 +1,25 @@
+diff -p -up xwiki-enterprise-web-2.3.1/WEB-INF/xwiki.cfg.orig~ xwiki-enterprise-web-2.3.1/WEB-INF/xwiki.cfg
+diff -p -up xwiki-enterprise-web-2.3.1/WEB-INF/xwiki.properties.orig~ xwiki-enterprise-web-2.3.1/WEB-INF/xwiki.properties
+--- xwiki-enterprise-web-2.3.1/WEB-INF/xwiki.properties.orig~	2010-06-29 10:20:10.246808699 +0200
++++ xwiki-enterprise-web-2.3.1/WEB-INF/xwiki.properties	2010-06-29 10:20:34.342793280 +0200
+@@ -62,17 +62,17 @@
+ #-# Type of the openoffice server instance used by officeimporter plugin.
+ #-# 0 - Internally managed server instance. (Default)
+ #-# 1 - Externally managed (local) server instance.
+-# openoffice.serverType=0
++ openoffice.serverType=1
+ 
+ #-# [Since 1.9M2]
+ #-# Port number used for connecting to the openoffice server instance.
+ #-# Default port is 8100 
+-# openoffice.serverPort=8100
++ openoffice.serverPort=8100
+ 
+ #-# [Since 1.9M2]
+ #-# If the openoffice server should be started / connected upon XE start.
+ #-# Default value is false
+-# openoffice.autoStart=false
++ openoffice.autoStart=true
+ 
+ #-# [Since 1.8RC3]
+ #-# Path to openoffice installation (serverType:0 only).
