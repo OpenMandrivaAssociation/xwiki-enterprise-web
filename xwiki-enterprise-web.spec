@@ -7,7 +7,7 @@ Release:	%mkrel 1
 License:	LGPLv2.1
 Group:		System/Servers
 Summary:	A powerful and extensible open-source Wiki engine written in Java
-URL:		http://xwiki.org/
+URL:		https://xwiki.org/
 Source0:	%{name}-%{version}.war
 Source1:	xwiki-pgsql-init.sh
 Patch0:		xwiki-enterprise-web-2.3.1-use-system-OOo-server.patch
